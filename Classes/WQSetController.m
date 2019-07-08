@@ -7,6 +7,7 @@
 //
 
 #import "WQSetController.h"
+#import "NSBundle+subBundle.h"
 
 @interface WQSetController ()
 
@@ -17,8 +18,17 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"aaaaaa");
 }
+
+
+- (instancetype)init
+{
+    if (self = [super initWithNibName:@"WQSetController" bundle:[NSBundle wq_subBundleWithBundleName:@"wqSetLib" targetClass:[self class]]]) {
+        
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
